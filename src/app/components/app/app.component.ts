@@ -1,3 +1,4 @@
+import { Target } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,4 +11,8 @@ export class AppComponent implements OnInit{
   constructor(){}
 
   ngOnInit(){}
+
+  toogleMenu(e:any){
+    e.parentElement?.nextElementSibling?.classList.toggle('list__active')
+  }
 }

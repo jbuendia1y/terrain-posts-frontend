@@ -1,0 +1,16 @@
+
+<div *ngFor="let item of post" class="card">
+    
+    <div class="card__img">
+        <img src="{{img}}" alt="" *ngFor="let img of item.images">
+    </div>
+    <div class="card__body">
+        <h2 class="card__title">{{item.title}}</h2>
+        <p class="card__subtitle">{{item.subtitle}}</p>
+
+        <div class="card__description">
+            <h3>{{item.description.title}}</h3>
+            <p>{{item.description.paragraph}}</p>
+        </div>
+    </div>
+</div>

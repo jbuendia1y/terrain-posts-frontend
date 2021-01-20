@@ -1,6 +1,20 @@
-<div routerLink="/first-post" class="card">
-    <app-carousel></app-carousel>
-    <h2> Local comercial · 160 M² </h2>
-    <p>ALQUILER DE Edificio Comercial</p>
-    <p>15 Oficinas para Centro Médico, Notarias, Estudios Jurídicos, Bancos, etc</p>
+<div *ngFor="let post of postsData" class="card">
+    
+    <div class="card__img">
+        <img src="{{post.images[0]}}" alt="{{post.title}}" class="card__img-w">
+        <img src="{{post.images[1]}}" alt="{{post.title}}" class="card__img-w">
+        <img src="{{post.images[2]}}" alt="{{post.title}}" class="card__img-w">
+    </div>
+    <div class="card__body">
+        <h2 class="card__title">{{post.title}}</h2>
+        <p class="card__subtitle">{{post.subtitle}}</p>
+
+        <div class="card__description">
+            <h3 class="card__description-title">{{post.description.title}}</h3>
+        </div>
+        <hr class="line card__line">
+        <div class="card__footer">
+            <a routerLink="/post/{{post._id}}" class="button card__button">View Post</a>
+        </div>
+    </div>
 </div>

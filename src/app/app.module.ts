@@ -4,9 +4,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './components/app/app.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { PostTestComponent } from './components/post-test/post-test.component';
-import { HomeComponent } from './components/home/home.component'
+import { HomeComponent } from './components/home/home.component';
+import { PostComponent } from './components/post/post.component'
 
 const routes:Routes = [
   {
@@ -19,8 +18,8 @@ const routes:Routes = [
     component : HomeComponent
   },
   {
-    path : 'first-post',
-    component : PostTestComponent
+    path : 'post/:id',
+    component : PostComponent
   }
 ]
 
@@ -28,9 +27,8 @@ const routes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent,
-    PostTestComponent,
-    HomeComponent 
+    HomeComponent,
+    PostComponent 
   ],
   imports: [
     BrowserModule,
