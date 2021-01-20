@@ -1,0 +1,53 @@
+.carousel{
+    position: relative;
+    height: 300px;
+
+    background-color: rgb(160, 160, 160);
+
+    &__img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: 300px;
+    }
+}
+
+.button{
+    color: white;
+
+    background-color: orange;
+    border: none;
+
+    padding: .7em 1.2em;
+
+    &__right,&__left{
+        background: none;
+        color: white;
+        font-size: 2em;
+    }
+
+    &__right{
+        padding: 1em 0 1em 1em;
+    }
+    &__left{
+        padding: 1em 1em 1em 0;
+    }
+
+}
+
+.position{
+    position: absolute;
+    height: 50%;
+    display: flex;
+    align-items: center;
+
+    &__left{
+        left: 1.5em;
+        top: 25%;
+    }
+
+    &__right{
+        right: 1.5em;
+        top: 25%;
+    }
+}
