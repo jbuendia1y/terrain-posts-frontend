@@ -28,6 +28,30 @@ body{
     background-color: #f50;
 }
 
+.overflow{
+    &-hidden{
+        overflow: hidden;
+    }
+}
+
+.form{
+    display: grid;
+    margin-right: auto;
+    margin-top: 2em;
+    &__field{
+        margin-bottom: .5em;
+    }
+    &__label{
+        display: block;
+    }
+    &__input{
+        width: 100%;
+        border: 1px solid rgb(126, 165, 165);
+        border-radius: 7px;
+        padding: .5em 0 .5em .7em;
+    }
+}
+
 @media screen and (min-width:770px){
     .container{
         width: 90%;

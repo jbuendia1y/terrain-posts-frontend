@@ -43,7 +43,12 @@ export class PostComponent implements OnInit {
   }
 
   viewGallery(){
-    this.gallery = !this.gallery
+    this.gallery = !this.gallery;
+    const gallery = document.getElementById('galleryPhotos')
+    const body = document.getElementById('body')
+
+    body?.classList.toggle('overflow-hidden')
+    gallery?.classList.toggle('galleryPhotos__active')
   }
 
 }
