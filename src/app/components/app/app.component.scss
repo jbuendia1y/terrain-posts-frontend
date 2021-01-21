@@ -2,14 +2,22 @@
     background-color: #f3f7f8;
     border-bottom: 2.5px solid rgb(23, 122, 23);
 
-    margin-bottom: 1.5em;
     position: relative;
 
     &__box{
         width: 90%;
         display: flex;
         align-items: center;
-        padding: .8em 0;
+        padding: 1em 0;
+    }
+
+    &__title{
+        margin: 0;
+        color: green;
+    }
+
+    &__icon{
+        font-size: 1.1em;
     }
 }
 
@@ -38,5 +46,17 @@
 
     &__active{
         display: block;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .list{
+        display: block;
+        position: relative;
+        margin-left: auto;
+
+        &__toogle{
+            display: none;
+        }
     }
 }

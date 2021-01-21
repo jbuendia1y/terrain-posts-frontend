@@ -2,15 +2,38 @@
 <div *ngFor="let item of post" class="card">
     
     <div class="card__img">
-        <img src="{{img}}" alt="" *ngFor="let img of item.images">
+        <carousel [images]="images" [counter]="true" [lightDOM]="true" [cellsToShow]="2" [height]="360" [arrowsTheme]="'dark'"></carousel>
+        <button (click)="viewGallery()" class="button card__button-photos"><i class="fas fa-camera"></i> Fotos</button>
     </div>
-    <div class="card__body">
-        <h2 class="card__title">{{item.title}}</h2>
-        <p class="card__subtitle">{{item.subtitle}}</p>
-
-        <div class="card__description">
-            <h3>{{item.description.title}}</h3>
-            <p>{{item.description.paragraph}}</p>
+    <div class="container">
+        <div class="card__body">
+            <h2 class="card__title">{{item.title}}</h2>
+            <p class="card__subtitle">{{item.subtitle}}</p>
+    
+            <div class="card__description">
+                <h3>{{item.description.title}}</h3>
+                <p>{{item.description.paragraph}}</p>
+            </div>
+    
+            <div class="card__contact">
+                <div *ngFor="let type of item.contact">
+                    <a href="{{type.url}}" *ngIf="type.name == 'whatsapp'" class="card__contact-clean card__contact-green">
+                        <i class="fab fa-whatsapp card__contact-left"></i>
+                        {{type.name}}
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
+
+<div class="galleryPhotos">
+    <div class="galleryPhotos__images" *ngIf="gallery">
+        <carousel>
+            <div class="carousel-cell" *ngFor="let img of post[0].images">
+                <img src="{{img}}" alt="images of Post">
+            </div>
+        </carousel>
     </div>
 </div>

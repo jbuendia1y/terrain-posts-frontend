@@ -17,14 +17,33 @@ export class PostComponent implements OnInit {
   ) { }
 
   post : posts[] = []
+  images:any = []
+  gallery:boolean = false
 
   ngOnInit(): void {
 
     this.api.getPost(this.routeActive.snapshot.params.id)
-      .subscribe((res:any) => this.post = res,
+      .subscribe((res:any) => {
+        this.post = res;
+        this.setImages()
+      },
       err => console.log(err)
       )
+  }
 
+  setImages(){
+    //Reduce the number of images
+    let n = Math.ceil(this.post[0].images.length*(50/100))
+    
+    for(let i=0;i<n;i++){
+      this.images.push({
+        path : this.post[0].images[i]
+      })
+    }
+  }
+
+  viewGallery(){
+    this.gallery = !this.gallery
   }
 
 }

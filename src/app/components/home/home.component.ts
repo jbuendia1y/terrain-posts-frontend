@@ -15,12 +15,14 @@ export class HomeComponent implements OnInit {
   ) { }
 
   postsData : posts[] = []
+  images = []
 
   ngOnInit(): void {
 
     this.api.getAllPosts()
-      .subscribe((res:any)=>this.postsData = res)
-
-  }
+      .subscribe((res:any) => this.postsData = res,
+        err=> console.log(err)
+      )
+  } 
 
 }

@@ -1,9 +1,6 @@
 <div *ngFor="let post of postsData" class="card">
-    
     <div class="card__img">
-        <img src="{{post.images[0]}}" alt="{{post.title}}" class="card__img-w">
-        <img src="{{post.images[1]}}" alt="{{post.title}}" class="card__img-w">
-        <img src="{{post.images[2]}}" alt="{{post.title}}" class="card__img-w">
+        <img src="{{post.images[0]}}" alt="imagesOfPost" class="card__img-w">
     </div>
     <div class="card__body">
         <h2 class="card__title">{{post.title}}</h2>

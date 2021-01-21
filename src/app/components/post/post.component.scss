@@ -1,0 +1,63 @@
+.card{
+    &__img{
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__button{
+        &-photos{
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            z-index: 300;
+
+            box-shadow: 5px 5px 70px rgb(190, 190, 190);
+        }
+    }
+
+    &__body{
+        width: 90%;
+        max-width: 520px;
+        margin: 2em auto;
+    }
+
+    &__contact{
+        &-clean{
+            text-decoration: none;
+            display: flex;
+            font-size: 1.2em;
+        }
+
+        &-left{
+            margin-right: .25em;
+        }
+        &-green{
+            color: green;
+        }
+    }
+}
+
+.carousel{
+    z-index: 200;
+}
+.container{
+    width: 100%;
+}
+
+@media screen and (min-width:560px){
+    .container{
+        width: 90%;
+    }
+    .card{
+
+        &__button{
+            &-photos{
+                left: 5%;
+            }
+        }
+
+        &__body{
+            margin-left: 0;
+        }
+    }
+}
