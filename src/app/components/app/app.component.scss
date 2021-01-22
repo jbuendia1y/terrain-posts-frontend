@@ -24,9 +24,19 @@
 .list{
     margin: 0;
     padding: 0;
-    display: none;
 
     position: absolute;
+    right: 0;
+    top: 4.6em;
+    z-index: 500;
+    background-color:rgb(23, 122, 23);
+    width: 100%;
+    text-align: right;
+    padding: .5em 3em .5em 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
 
     &__toogle{
         font-size: 1.6em;
@@ -42,11 +52,13 @@
 
     &__link{
         text-decoration: none;
-        color: black;
+        color: white;
     }
 
     &__active{
         display: block;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -56,8 +68,24 @@
         position: relative;
         margin-left: auto;
 
+        right: unset;
+        top: unset;
+        z-index: unset;
+        background-color:unset;
+        width: unset;
+        text-align: unset;
+        padding: unset;
+
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+
         &__toogle{
             display: none;
+        }
+
+        &__link{
+            color: black;
         }
     }
 }

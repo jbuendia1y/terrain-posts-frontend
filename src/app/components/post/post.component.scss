@@ -89,8 +89,9 @@
     }
 
     &__button{
+        display: inline;
         font-size: 1.25em;
-        padding: .25em;
+        padding: .5em;
     }
 
     &__item{
@@ -129,8 +130,8 @@
         &::before{
             content: "";
             display: block;
-            width: 70%;
-            height: 70%;
+            width: 200px;
+            height: 200px;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -195,6 +196,15 @@
     .card{
         &__box{
             width: 900px;
+        }
+
+        &__button-photos{
+            cursor: pointer;
+        }
+    }
+    .galleryPhotos{
+        &__button{
+            cursor: pointer;
         }
     }
 }

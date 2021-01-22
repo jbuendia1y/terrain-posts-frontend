@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { Title, Meta } from '@angular/platform-browser'
 
 import { posts } from '../../interfaces/posts'
 import { ApiService } from '../../services/api.service'
+
 
 @Component({
   selector: 'app-post',
@@ -13,7 +15,9 @@ export class PostComponent implements OnInit {
 
   constructor(
     private routeActive : ActivatedRoute,
-    private api : ApiService
+    private api : ApiService,
+    private title : Title,
+    private meta : Meta
   ) { }
 
   post : posts[] = []
@@ -21,14 +25,15 @@ export class PostComponent implements OnInit {
   gallery:boolean = false
 
   ngOnInit(): void {
-
+    //Data Api
     this.api.getPost(this.routeActive.snapshot.params.id)
-      .subscribe((res:any) => {
+      .subscribe((res: any) => {
         this.post = res;
-        this.setImages()
-      },
-      err => console.log(err)
-      )
+        //Images for Carousel
+        this.setImages();
+        //Set MetaTags
+        this.setMetaTags(this.post[0])
+      },err => console.log(err));
   }
 
   setImages(){
@@ -49,6 +54,16 @@ export class PostComponent implements OnInit {
 
     body?.classList.toggle('overflow-hidden')
     gallery?.classList.toggle('galleryPhotos__active')
+  }
+
+  setMetaTags(data:posts){
+    this.title.setTitle(data.title)
+    this.meta.updateTag({name : 'description', content : data.description.title})
+
+    //Data for Facebook
+    this.meta.updateTag({property : 'og:title', content : data.title})
+    this.meta.updateTag({property : 'og:description', content : data.description.title})
+    this.meta.updateTag({property : 'og:img', content : data.images[0]})
   }
 
 }
