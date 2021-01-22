@@ -7,7 +7,21 @@ export interface posts{
         paragraph : string
     },
     images : string[],
-    contact : contactI[]
+    contact : contactI[],
+    features :  featuresI,
+    map : mapI
+}
+
+export interface mapI {
+    url : string,
+    ubication : string
+}
+
+export interface featuresI {
+    area : string,
+    offices : string,
+    toilets : string,
+    parkings : string
 }
 
 export interface contactI{

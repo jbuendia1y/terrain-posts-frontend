@@ -42,6 +42,7 @@
 
     &__link{
         text-decoration: none;
+        color: black;
     }
 
     &__active{
@@ -57,6 +58,14 @@
 
         &__toogle{
             display: none;
+        }
+    }
+}
+
+@media screen and (min-width:1240px){
+    .nav{
+        &__box{
+            width: 85%;
         }
     }
 }

@@ -6,7 +6,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
-import { PostComponent } from './components/post/post.component'
+import { PostComponent } from './components/post/post.component';
 
 const routes:Routes = [
   {
@@ -29,7 +29,7 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    PostComponent 
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -78,6 +78,7 @@
 
         &__img{
             min-width: 360px;
+            max-width: 450px;
             width: auto;
         }
 
@@ -86,5 +87,17 @@
             overflow: hidden;
             padding: 0 .8em 0 1.5em;
         }
+    }
+}
+
+@media screen and (min-width:1240px){
+    :host{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:1440px){
+    :host{
+        width: 80%;
     }
 }

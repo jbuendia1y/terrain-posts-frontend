@@ -36,24 +36,32 @@ body{
 
 .form{
     display: grid;
-    margin-right: auto;
-    margin-top: 2em;
+    margin: 2em auto;
+    margin-bottom: 4em;
     &__field{
-        margin-bottom: .5em;
+        margin-bottom: 1em;
     }
     &__label{
         display: block;
+        margin-bottom: .25em;
     }
     &__input{
         width: 100%;
         border: 1px solid rgb(126, 165, 165);
         border-radius: 7px;
         padding: .5em 0 .5em .7em;
+        box-sizing: border-box;
+        resize: none;
     }
 }
 
 @media screen and (min-width:770px){
     .container{
         width: 90%;
+    }
+}
+@media screen and (min-width:1240px){
+    .container{
+        width: 85%;
     }
 }
