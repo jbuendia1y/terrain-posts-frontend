@@ -2,7 +2,7 @@
 <div *ngFor="let item of post" class="card">
     
     <div class="card__img">
-        <carousel [images]="images" [counter]="true" [lightDOM]="true" [cellsToShow]="2" [height]="360" [arrowsTheme]="'dark'"></carousel>
+        <carousel [images]="images" [counter]="true" [lightDOM]="true" [cellsToShow]="nImages[0]" [height]="360" [arrowsTheme]="'dark'" [objectFit]="nImages[1]"></carousel>
         <button (click)="viewGallery()" class="button card__button-photos"><i class="fas fa-camera"></i> Fotos</button>
     </div>
     <div class="container card__box">

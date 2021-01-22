@@ -23,6 +23,7 @@ export class PostComponent implements OnInit {
   post : posts[] = []
   images:any = []
   gallery:boolean = false
+  nImages : any[] = [1,'contain']
 
   ngOnInit(): void {
     //Data Api
@@ -34,6 +35,28 @@ export class PostComponent implements OnInit {
         //Set MetaTags
         this.setMetaTags(this.post[0])
       },err => console.log(err));
+
+      this.windowSize()
+  }
+
+  windowSize(){
+    if(window.screen.width >= 1024){
+      this.nImages[0] = 2
+      this.nImages[1] = 'cover'
+    }else {
+      this.nImages[0] = 1
+      this.nImages[1] = 'contain'
+    }
+
+    addEventListener('resize',()=>{
+      if(window.screen.width >= 1024){
+        this.nImages[0] = 2
+        this.nImages[1] = 'cover'
+      }else {
+        this.nImages[0] = 1
+        this.nImages[1] = 'contain'
+      }
+    })
   }
 
   setImages(){
